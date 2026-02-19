@@ -2,8 +2,14 @@ import Container from "@/components/Container";
 import { caseStudies } from "@/content/caseStudies";
 import { notFound } from "next/navigation";
 
-export default function CaseStudyDetail({ params }: { params: { slug: string } }) {
-  const cs = caseStudies.find((c) => c.slug === params.slug);
+export default async function CaseStudyDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const cs = caseStudies.find((c) => c.slug === slug);
   if (!cs) return notFound();
 
   return (
