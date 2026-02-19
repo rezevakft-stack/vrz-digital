@@ -8,14 +8,11 @@ export default function CaseStudyCards() {
         <div>
           <h2 className="text-2xl font-semibold">Esettanulmányok</h2>
           <p className="mt-2 text-white/60 max-w-2xl">
-            Nem „szép számok” – rendszer és tanulságok. Így építünk növekedést kreatívból és teljesítményből.
+            Röviden és tisztán. Mi volt a gond, mit csináltunk, mi lett belőle.
           </p>
         </div>
-        <Link
-          href="/esettanulmanyok"
-          className="hidden md:inline-flex text-sm text-white/70 hover:text-white"
-        >
-          Összes esettanulmány →
+        <Link href="/esettanulmanyok" className="hidden md:inline-flex text-sm text-white/70 hover:text-white">
+          Összes →
         </Link>
       </div>
 
@@ -39,19 +36,10 @@ export default function CaseStudyCards() {
               ))}
             </div>
 
-            <div className="mt-5 text-sm text-white/70 group-hover:text-white">
-              Megnézem →
-            </div>
+            <div className="mt-5 text-sm text-white/70 group-hover:text-white">Megnézem →</div>
           </Link>
         ))}
       </div>
-
-      <Link
-        href="/esettanulmanyok"
-        className="mt-8 inline-flex md:hidden text-sm text-white/70 hover:text-white"
-      >
-        Összes esettanulmány →
-      </Link>
     </div>
   );
 }

@@ -1,43 +1,34 @@
-export type Service = {
-  title: string;
-  desc: string;
-  highlights: string[];
-};
+export type Service = { title: string; desc: string; highlights: string[] };
 
 export const services: Service[] = [
   {
-    title: "Videógyártás (UGC / reklám / kreatív)",
-    desc: "Short-form videók, hirdetésre optimalizált kreatívok, forgatókönyv–vágás–feliratozás teljesen kézben tartva.",
-    highlights: ["TikTok & Reels first", "Kampányhoz tervezve", "Gyors iterációk"]
+    title: "Videógyártás (UGC / short-form / reklám)",
+    desc: "Hirdetésre tervezett videók: hook, ritmus, felirat, proof, CTA. Nem dísz – motor.",
+    highlights: ["TikTok & Reels fókusz","Gyors iteráció","Kreatív könyvtár"]
   },
   {
-    title: "TikTok Ads + kreatív stratégia",
-    desc: "Struktúra, tesztelés, kreatív variációk, célzás és skálázás – nem csak „megy a hirdetés”, hanem tanul és nő.",
-    highlights: ["Creative testing rendszer", "Spark Ads/UGC", "Skálázási playbook"]
+    title: "TikTok Ads (teszt → tanulság → skála)",
+    desc: "Struktúra, kreatív rotáció, Spark/UGC, skálázás. A TikTok nálunk nem “plusz csatorna”.",
+    highlights: ["Tesztelési rendszer","Skálázási playbook","Kreatív-first"]
   },
   {
     title: "Meta Ads (Facebook/Instagram)",
-    desc: "Kampányrendszer felépítés, konverzió-optimalizálás, kreatív pipeline és teljesítmény riporting.",
-    highlights: ["ROAS fókusz", "CAPI/Pixel setup", "Folyamatos optimalizálás"]
+    desc: "Kampányrendszer + kreatív pipeline. A cél: stabil teljesítmény, nem hullámvasút.",
+    highlights: ["CAPI/Pixel","Retargeting logika","Folyamatos optimalizálás"]
   },
   {
     title: "Google Ads (Search / PMax)",
-    desc: "Szándék alapú forgalom és performance. Strukturált fiók, landing megfeleltetés, mérés és minőség.",
-    highlights: ["Keresési kampányok", "PMax", "Mérés rendben"]
+    desc: "Szándék alapú forgalom, tiszta struktúra, jó landing illesztés. Mérhetően.",
+    highlights: ["Search","PMax","Mérés rendben"]
   },
   {
     title: "CRO + landing oldalak",
-    desc: "Nem csak kattintás kell: konverzió. Üzenet–ajánlat–oldal összehangolás és A/B teszt logika.",
-    highlights: ["Gyors audit", "Konverziós UX", "A/B teszt terv"]
+    desc: "A kattintás nem eredmény. Konverziós audit, gyors javítások, A/B terv.",
+    highlights: ["Gyors audit","Konverziós UX","Teszt terv"]
   },
   {
-    title: "SEO + tartalom alapok",
-    desc: "Technikai és on-page rendbetétel, hogy hosszú távon is jöjjön organikus érdeklődő (blog nélkül is lehet okosan).",
-    highlights: ["Technikai SEO", "On-page", "Local / brand search"]
-  },
-  {
-    title: "Email marketing + automatizmusok",
-    desc: "Feliratkozó → ügyfél: lead magnet, nurture, ajánlatok és visszacsábítás. Szép, tiszta rendszerben.",
-    highlights: ["Automatizmusok", "Szegmentálás", "Konverziókövetés"]
+    title: "SEO + email automatizmusok",
+    desc: "Alapok rendbe, hogy ne csak hirdetésből éljen a rendszer. Automatizmusokkal rásegítünk.",
+    highlights: ["Technikai SEO","Szegmentálás","Nurture flow-k"]
   }
 ];

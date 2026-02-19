@@ -8,11 +8,7 @@ export const metadata: Metadata = {
   title: `${site.name} — ${site.tagline}`,
   description: site.tagline,
   metadataBase: new URL(`https://${site.domain}`),
-  openGraph: {
-    title: `${site.name} — ${site.tagline}`,
-    description: site.tagline,
-    type: "website"
-  }
+  openGraph: { title: `${site.name} — ${site.tagline}`, description: site.tagline, type: "website" }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

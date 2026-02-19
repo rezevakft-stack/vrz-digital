@@ -1,53 +1,28 @@
 export type CaseStudy = {
-  slug: string;
-  title: string;
-  industry: string;
-  summary: string;
+  slug: string; title: string; industry: string; summary: string;
   metrics: { label: string; value: string }[];
-  challenge: string;
-  approach: string[];
-  result: string;
+  challenge: string; approach: string[]; result: string;
 };
 
 export const caseStudies: CaseStudy[] = [
   {
     slug: "tiktok-scaling-ugyfel",
-    title: "TikTok Ads skálázás kreatív teszteléssel",
+    title: "TikTok skálázás kreatív teszteléssel",
     industry: "eCommerce",
-    summary: "Short-form kreatív pipeline + tesztrendszer, amitől a kampány végre tanult és skálázott.",
-    metrics: [
-      { label: "ROAS", value: "+3,2x" },
-      { label: "CPA", value: "-28%" },
-      { label: "Kreatív variáció", value: "48/hó" }
-    ],
-    challenge:
-      "Sok megjelenés, kevés stabil konverzió. A kreatívok nem voltak hirdetésre optimalizálva, a tesztelés ad hoc ment.",
-    approach: [
-      "UGC-szerű kreatív irányok (hook → proof → CTA)",
-      "Kreatív tesztelési keretrendszer (heti ritmus, következtetések)",
-      "Top kreatívok skálázása + célzási finomhangolás"
-    ],
-    result:
-      "Stabilabb teljesítmény és skálázható kreatív rendszer: kevesebb találgatás, több tanulás és kontroll."
+    summary: "Kreatív pipeline + tesztrendszer → stabilabb teljesítmény és skálázhatóság.",
+    metrics: [{label:"ROAS",value:"+3,2x"},{label:"CPA",value:"-28%"},{label:"Kreatív",value:"48/hó"}],
+    challenge: "Sok megjelenés, kevés stabil konverzió. Nem volt ritmus a kreatív tesztelésben.",
+    approach: ["Hook → proof → CTA keret","Heti tesztciklus + tanulságok","Top kreatívok skálázása + célzási finomhangolás"],
+    result: "Kevesebb találgatás, több kontroll. Stabilabb kampány és működő kreatív rendszer."
   },
   {
     slug: "meta-google-fullfunnel",
-    title: "Meta + Google full-funnel struktúra",
+    title: "Meta + Google: full-funnel rendrakás",
     industry: "SaaS / B2B",
-    summary: "Landing + mérés + kampánystruktúra: a csatornák végre összeértek és átlátható lett a teljesítmény.",
-    metrics: [
-      { label: "Lead", value: "+41%" },
-      { label: "CPL", value: "-22%" },
-      { label: "Mérés", value: "GA4 + CAPI" }
-    ],
-    challenge:
-      "Széteső csatornák, nehezen összehasonlítható eredmények, gyenge landing konverzió.",
-    approach: [
-      "Mérés rendbetétele (GA4, események, konverziók)",
-      "Landing üzenet–ajánlat összehangolás + CRO audit",
-      "Kampányok újrastrukturálása (Search intent + retargeting)"
-    ],
-    result:
-      "Átláthatóbb funnel és jobb konverzió: a büdzsé ott dolgozik, ahol tényleg hoz ügyfelet."
+    summary: "Mérés + landing + kampánystruktúra: a csatornák végre összeértek.",
+    metrics: [{label:"Lead",value:"+41%"},{label:"CPL",value:"-22%"},{label:"Mérés",value:"GA4+CAPI"}],
+    challenge: "Széteső csatornák és gyenge landing konverzió. Nehéz volt tisztán látni, mi hoz eredményt.",
+    approach: ["Konverziók és események rendbetétele","Landing üzenet–ajánlat hangolás + CRO","Search intent + retargeting újrastruktúrázás"],
+    result: "Átláthatóbb funnel, jobb konverzió. A büdzsé ott dolgozik, ahol tényleg hoz ügyfelet."
   }
 ];
