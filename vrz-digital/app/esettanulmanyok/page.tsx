@@ -1,33 +1,54 @@
 import Container from "@/components/Container";
-import Link from "next/link";
 import { caseStudies } from "@/content/caseStudies";
+import { notFound } from "next/navigation";
 
-export default function CaseStudiesPage() {
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function CaseStudyDetail({ params }: Props) {
+  const { slug } = await params;
+
+  const cs = caseStudies.find((c) => c.slug === slug);
+  if (!cs) return notFound();
+
   return (
     <section className="py-14">
       <Container>
-        <h1 className="text-3xl font-semibold">Esettanulmányok</h1>
-        <p className="mt-3 text-white/60 max-w-3xl">
-          Röviden és tisztán. Mi volt a gond, mit csináltunk, mi lett belőle.
-        </p>
+        <div className="text-sm text-white/60">{cs.industry}</div>
+        <h1 className="mt-2 text-3xl font-semibold">{cs.title}</h1>
+        <p className="mt-3 text-white/60 max-w-3xl">{cs.summary}</p>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {caseStudies.map((c) => (
-            <Link key={c.slug} href={`/esettanulmanyok/${c.slug}`}
-              className="rounded-2xl border border-white/10 bg-white/5 p-7 hover:bg-white/10 transition">
-              <div className="text-sm text-white/60">{c.industry}</div>
-              <div className="mt-1 text-xl font-semibold">{c.title}</div>
-              <p className="mt-2 text-sm text-white/60">{c.summary}</p>
-              <div className="mt-5 grid grid-cols-3 gap-3">
-                {c.metrics.map((m) => (
-                  <div key={m.label} className="rounded-xl border border-white/10 bg-black/30 p-3">
-                    <div className="font-semibold">{m.value}</div>
-                    <div className="text-xs text-white/60">{m.label}</div>
-                  </div>
-                ))}
-              </div>
-            </Link>
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {cs.metrics.map((m) => (
+            <div key={m.label} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="text-2xl font-semibold">{m.value}</div>
+              <div className="mt-1 text-sm text-white/60">{m.label}</div>
+            </div>
           ))}
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
+            <h2 className="text-lg font-semibold">Kihívás</h2>
+            <p className="mt-2 text-sm text-white/60">{cs.challenge}</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
+            <h2 className="text-lg font-semibold">Megközelítés</h2>
+            <ul className="mt-3 space-y-2 text-sm text-white/60">
+              {cs.approach.map((a) => (
+                <li key={a} className="flex gap-2">
+                  <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-white/50" />
+                  {a}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-7">
+          <h2 className="text-lg font-semibold">Eredmény</h2>
+          <p className="mt-2 text-sm text-white/60">{cs.result}</p>
         </div>
       </Container>
     </section>
