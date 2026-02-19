@@ -1,23 +1,22 @@
 import "./globals.css";
-import type { Metadata } from "next";
-import { site } from "@/lib/site";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
-export const metadata: Metadata = {
-  title: `${site.name} — ${site.tagline}`,
-  description: site.tagline,
-  metadataBase: new URL(`https://${site.domain}`),
-  openGraph: { title: `${site.name} — ${site.tagline}`, description: site.tagline, type: "website" }
-};
+import Image from "next/image";
+import Link from "next/link";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="hu">
-      <body className="min-h-screen">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body>
+        <header className="p-6 flex justify-between items-center max-w-6xl mx-auto">
+          <Link href="/">
+            <Image src="/logo.png" alt="VRZ Digital" width={160} height={50} />
+          </Link>
+          <nav className="space-x-6 text-sm text-white/70">
+            <Link href="/">Főoldal</Link>
+            <Link href="/szolgaltatasok">Szolgáltatások</Link>
+            <Link href="/kapcsolat">Kapcsolat</Link>
+          </nav>
+        </header>
+        {children}
       </body>
     </html>
   );
